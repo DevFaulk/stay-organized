@@ -39,25 +39,7 @@ function loadUsersCard() {
     });
 }
 
-window.onload = function () {
-  loadUserDrop();
-};
-
-userDrop.onchange = function () {
-  const addTodoLink = document.querySelector("#addTodoLink");
-  if (userDrop.value !== "select") {
-    // show add todo
-    addTodoLink.style.display = "inline";
-    //change link location on change
-    addTodoLink.href = `new_todo.html/?userId=${userDrop.value}`;
-    loadUsersCard();
-  } else if (userDrop.value == "select") {
-    addTodoLink.style.display = "none";
-    addTodoLink.removeAttribute("href");
-    return;
-  }
-};
-
+// CALLED Functions
 function addYesCompletionButton(todo) {
   let completeNoButton = document.createElement("button");
   completeNoButton.className = "delete-button";
@@ -107,3 +89,23 @@ function addCategoryToCard(todo) {
   category.innerText = todo.category;
   todoCard.appendChild(category);
 }
+
+// CALL Functions
+window.onload = function () {
+  loadUserDrop();
+};
+
+userDrop.onchange = function () {
+  const addTodoLink = document.querySelector("#addTodoLink");
+  if (userDrop.value !== "select") {
+    // show add todo
+    addTodoLink.style.display = "inline";
+    //change link location on change
+    addTodoLink.href = `new_todo.html/?userId=${userDrop.value}`;
+    loadUsersCard();
+  } else if (userDrop.value == "select") {
+    addTodoLink.style.display = "none";
+    addTodoLink.removeAttribute("href");
+    return;
+  }
+};
