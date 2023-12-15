@@ -1,6 +1,6 @@
 "use strict";
 const userDrop = document.querySelector("#user-drop");
-const usersTableBody = document.querySelector("#usersTableBody");
+const userCard = document.querySelector("#userCard");
 
 function loadUserDrop() {
   fetch("http://localhost:8083/api/users")
@@ -19,10 +19,10 @@ function loadUsersCard() {
   fetch("http://localhost:8083/api/users")
     .then((response) => response.json())
     .then((users) => {
-      usersTableBody.innerText = " ";
+      userCard.innerText = " ";
       for (const user of users) {
         if (userDrop.value == user.id) {
-          let row = usersTableBody.insertRow();
+          let row = userCard.insertRow();
           let cell1 = row.insertCell();
           cell1.innerText = user.name;
           let cell2 = row.insertCell();
@@ -41,4 +41,4 @@ window.onload = function () {
   loadUserDrop();
 };
 
-userDrop.onchange = loadUsersTable;
+userDrop.onchange = loadUsersCard;
