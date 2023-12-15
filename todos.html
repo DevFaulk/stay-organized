@@ -7,6 +7,7 @@
     <link
       rel="stylesheet"
       href="https://unpkg.com/awsm.css/dist/awsm.min.css" />
+    <link rel="stylesheet" href="css/todo.css" />
   </head>
   <body>
     <header>
@@ -17,22 +18,14 @@
     </header>
     <main>
       <h1>Todos</h1>
-      <a href="new-todo.html">Add Todo</a>
+
       <form>
         <label for="user-drop">User</label>
         <select id="user-drop">
-          <option value="">Select User</option>
+          <option value="select">Select User...</option>
         </select>
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Username</th>
-            </tr>
-          </thead>
-          <tbody id="usersTableBody"></tbody>
-        </table>
+        <a id="addTodoLink">Add Todo</a>
+        <div class="card" id="userCard"></div>
       </form>
     </main>
     <footer>
