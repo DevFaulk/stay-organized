@@ -1,5 +1,6 @@
 "use strict";
 const userDrop = document.querySelector("#user-drop");
+const usersTableBody = document.querySelector("#usersTableBody");
 
 function loadUserDrop() {
   fetch("http://localhost:8083/api/users")
@@ -14,6 +15,23 @@ function loadUserDrop() {
     });
 }
 
+function loadUsersCard() {
+  fetch("http://localhost:8083/api/users")
+    .then((response) => response.json())
+    .then((users) => {
+      usersTableBody.innerText = " ";
+      for (const user of users) {
+        if (userDrop.value == user.id) {
+          let row = usersTableBody.insertRow();
+          let cell1 = row.insertCell();
+          cell1.innerText = user.name;
+          let cell2 = row.insertCell();
+          cell2.innerText = user.username;
+        }
+      }
+    });
+}
+
 function displayTodos() {
   const userId = userDrop.value;
   console.log(userId);
@@ -23,4 +41,4 @@ window.onload = function () {
   loadUserDrop();
 };
 
-userDrop.onchange = displayTodos;
+userDrop.onchange = loadUsersTable;
