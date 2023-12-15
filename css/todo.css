@@ -1,3 +1,12 @@
+/* * Body */
+
+/* * ID's */
 #addTodoLink {
   display: none;
+}
+
+/* * Classes */
+.dropdown {
+  display: flex;
+  justify-content: space-between;
 }

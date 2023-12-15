@@ -39,7 +39,7 @@ function loadUsersCard() {
     });
 }
 
-// CALLED Functions
+//* CALLED Functions
 function addYesCompletionButton(todo) {
   let completeNoButton = document.createElement("button");
   completeNoButton.className = "delete-button";
@@ -90,7 +90,7 @@ function addCategoryToCard(todo) {
   todoCard.appendChild(category);
 }
 
-// CALL Functions
+// * CALL Functions
 window.onload = function () {
   loadUserDrop();
 };
@@ -106,6 +106,7 @@ userDrop.onchange = function () {
   } else if (userDrop.value == "select") {
     addTodoLink.style.display = "none";
     addTodoLink.removeAttribute("href");
+    todoCard.innerText = " ";
     return;
   }
 };

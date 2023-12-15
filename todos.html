@@ -21,10 +21,13 @@
 
       <form>
         <label for="user-drop">User</label>
-        <select id="user-drop">
-          <option value="select">Select User...</option>
-        </select>
-        <a id="addTodoLink">Add Todo</a>
+        <div class="dropdown">
+          <select id="user-drop">
+            <option value="select">Select User...</option>
+          </select>
+          <!-- ? Links To new_todos.html -->
+          <a id="addTodoLink">Add Task To This User?</a>
+        </div>
         <div class="card" id="userCard"></div>
       </form>
     </main>
